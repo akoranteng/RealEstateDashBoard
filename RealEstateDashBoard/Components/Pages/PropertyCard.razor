@@ -1,0 +1,23 @@
+﻿@using Syncfusion.Blazor.Cards
+@using RealEstateDashBoard.Models
+
+@code {
+    [Parameter]
+    public Property PropertyCard { get; set; }
+}
+
+<SfCard>
+    <CardContent>
+        <div class="e-card-header">
+            <div class="e-card-title">@PropertyCard.Title</div>
+            <div class="e-card-sub-title">@($"${PropertyCard.Price:N0}")</div>
+        </div>
+        <div class="e-card-content">
+            <img src="@PropertyCard.ImageUrl" alt="Property Image" style="width:100%; border-radius:8px;" />
+            <p>@PropertyCard.Description</p>
+        </div>
+        <div class="e-card-actions">
+            <button class="btn btn-primary">View Details</button>
+        </div>
+    </CardContent>
+</SfCard>
